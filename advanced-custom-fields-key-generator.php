@@ -3,10 +3,11 @@ defined( 'ABSPATH' ) or exit;
 
 /**
  * Plugin Name: Advanced Custom Fields - Key Generator
- * Description: An add-on for Advanced Custom Fields. Adds a button at Custom Fields > Tools that generates field and group keys.
- * Plugin URI:
+ * Description: An add-on for Advanced Custom Fields. Adds a button at Custom Fields → Tools that generates field and group keys.
+ * Plugin URI: https://github.com/csalzano/advanced-custom-fields-key-generator
  * Author: Corey Salzano
  * Author URI: https://breakfastco.xyz
+ * Version: 0.1.0
  * Text Domain: acf-key-gen
  * License: GPLv2
  */

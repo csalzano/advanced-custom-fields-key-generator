@@ -32,14 +32,14 @@ if( class_exists( 'ACF_Admin_Tool' ) )
 
 				printf(
 					'<p>%s</p>',
-					esc_html__( 'Generating a field or group key is useful when manually creating ACF objects.', 'acf-key-gen' )
+					esc_html__( 'Field and group keys are needed when coding ACF objects.', 'acf-key-gen' )
 				);		
 			
 			?></p><div class="acf-fields"><?php
 
 			acf_render_field_wrap(
 				array(
-					'label'        => __( 'Key Type', 'acf-key-gen' ),
+					'label'        => __( 'Type', 'acf-key-gen' ),
 					'type'         => 'radio',
 					'name'         => 'key_type',
 					'layout'       => 'horizontal',
