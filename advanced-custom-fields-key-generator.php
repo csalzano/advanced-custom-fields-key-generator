@@ -17,6 +17,8 @@ class ACF_Tool_Key_Generator
 	public function add_hooks()
 	{
 		//Add an ACF admin tool after the ACF admin page is loaded
+		add_action( 'acf/include_admin_tools', array( $this, 'add_admin_tool' ), 11 );
+		// Backwards compatibility, the hook was renamed
 		add_action( 'load-custom-fields_page_acf-tools', array( $this, 'add_admin_tool' ), 11 );
 	}
 
