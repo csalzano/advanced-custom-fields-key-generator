@@ -1,5 +1,11 @@
 <?php
-defined( 'ABSPATH' ) or exit;
+/**
+ * Advanced Custom Fields - Key Generator
+ *
+ * @package ACF_Tool_Key_Generator
+ */
+
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Plugin Name: Advanced Custom Fields - Key Generator
@@ -7,25 +13,36 @@ defined( 'ABSPATH' ) or exit;
  * Plugin URI: https://github.com/csalzano/advanced-custom-fields-key-generator
  * Author: Corey Salzano
  * Author URI: https://breakfastco.xyz
- * Version: 0.1.0
+ * Version: 0.1.1
  * Text Domain: acf-key-gen
  * License: GPLv2
  */
 
-class ACF_Tool_Key_Generator
-{
-	public function add_hooks()
-	{
-		//Add an ACF admin tool after the ACF admin page is loaded
+/**
+ * ACF_Tool_Key_Generator
+ */
+class ACF_Tool_Key_Generator {
+
+	/**
+	 * Adds hooks that power the plugins features.
+	 *
+	 * @return void
+	 */
+	public function add_hooks() {
+		// Add an ACF admin tool after the ACF admin page is loaded.
 		add_action( 'acf/include_admin_tools', array( $this, 'add_admin_tool' ), 11 );
-		// Backwards compatibility, the hook was renamed
+		// Backwards compatibility, the hook was renamed.
 		add_action( 'load-custom-fields_page_acf-tools', array( $this, 'add_admin_tool' ), 11 );
 	}
 
-	public function add_admin_tool()
-	{
-		//Add a box to Custom Fields > Tools
-		include_once( dirname( __FILE__ ) .  '/class-tool.php' );
+	/**
+	 * Registers our tool with ACF.
+	 *
+	 * @return void
+	 */
+	public function add_admin_tool() {
+		// Add a box to Custom Fields > Tools.
+		include_once dirname( __FILE__ ) . '/class-tool.php';
 		acf_register_admin_tool( 'ACF_Admin_Tool_Key_Generator' );
 	}
 }
